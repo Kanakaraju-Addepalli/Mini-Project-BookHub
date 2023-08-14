@@ -18,7 +18,6 @@ const Home = () => (
       return (
         <>
           <Header />
-
           <div className="home-container">
             <div className="home-content">
               <h1 className={`home-heading ${darkHeadingText}`}>

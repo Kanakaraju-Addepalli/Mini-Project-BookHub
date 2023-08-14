@@ -7,7 +7,7 @@ class LoginPage extends Component {
   state = {
     username: '',
     password: '',
-    showPassword: false,
+    // showPassword: false,
     showSubmitError: false,
     errorMessage: '',
   }
@@ -70,9 +70,7 @@ class LoginPage extends Component {
   }
 
   renderPasswordField = () => {
-    const {password, showPassword} = this.state
-
-    const passwordType = showPassword ? 'text' : 'password'
+    const {password} = this.state
 
     return (
       <>
@@ -81,7 +79,6 @@ class LoginPage extends Component {
         </label>
         <input
           id="password"
-          //  type={passwordType}
           type="password"
           className="password-input-field"
           value={password}
@@ -92,23 +89,23 @@ class LoginPage extends Component {
     )
   }
 
-  onToggleCheckbox = event => {
-    this.setState({showPassword: event.target.checked})
-  }
+  //   onToggleCheckbox = event => {
+  //     this.setState({showPassword: event.target.checked})
+  //   }
 
-  renderCheckbox = () => (
-    <div className="checkbox-input-container">
-      <input
-        id="checkboxInput"
-        type="checkbox"
-        className="checkbox-input-field"
-        onChange={this.onToggleCheckbox}
-      />
-      <label className="input-label checkbox-label" htmlFor="checkboxInput">
-        Show Password
-      </label>
-    </div>
-  )
+  //   renderCheckbox = () => (
+  //     <div className="checkbox-input-container">
+  //       <input
+  //         id="checkboxInput"
+  //         type="checkbox"
+  //         className="checkbox-input-field"
+  //         onChange={this.onToggleCheckbox}
+  //       />
+  //       <label className="input-label checkbox-label" htmlFor="checkboxInput">
+  //         Show Password
+  //       </label>
+  //     </div>
+  //   )
 
   render() {
     const {showSubmitError, errorMessage} = this.state
@@ -139,7 +136,7 @@ class LoginPage extends Component {
           <form className="form" onSubmit={this.onSubmitForm}>
             <div className="input-container">{this.renderUsernameField()}</div>
             <div className="input-container">{this.renderPasswordField()}</div>
-            <div className="input-container">{this.renderCheckbox()}</div>
+            {/* <div className="input-container">{this.renderCheckbox()}</div> */}
             <button type="submit" className="login-button">
               Login
             </button>

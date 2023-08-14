@@ -3,7 +3,6 @@ import {Component} from 'react'
 import Cookies from 'js-cookie'
 
 import {GiHamburgerMenu} from 'react-icons/gi'
-import {AiFillCloseCircle} from 'react-icons/ai'
 import {RiSunFill} from 'react-icons/ri'
 
 import './index.css'
@@ -38,9 +37,8 @@ class Header extends Component {
   renderMobileNavIconsContainer = () => (
     <HeaderContext.Consumer>
       {value => {
-        const {updateActiveNavId, onClose, isDarkTheme, onToggleTheme} = value
+        const {updateActiveNavId, isDarkTheme, onToggleTheme} = value
 
-        const darkThemeCloseColor = isDarkTheme ? '#ffffff' : '#000000'
         const darkThemeNavMenu = isDarkTheme ? 'dark-theme-mobile-nav-menu' : ''
 
         const navIcon = isDarkTheme ? (
@@ -77,9 +75,6 @@ class Header extends Component {
               >
                 {navIcon}
               </button>
-              {/* <button type="button" className="close-button" onClick={onClose}>
-                <AiFillCloseCircle size={25} color={darkThemeCloseColor} />
-              </button> */}
             </ul>
           </div>
         )
