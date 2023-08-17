@@ -3,12 +3,12 @@ import HeaderContext from '../../context/HeaderContext'
 import './index.css'
 
 const NavItem = props => {
-  const {navItemDetails, updateActiveNavId} = props
-  const {id, displayText, pathText} = navItemDetails
+  const {navItemDetails} = props
+  const {displayText, pathText} = navItemDetails
 
-  const onClickNavItem = () => {
-    updateActiveNavId(id)
-  }
+  //   const onClickNavItem = () => {
+  //     updateActiveNavId(id)
+  //   }
 
   return (
     <HeaderContext.Consumer>
@@ -17,7 +17,7 @@ const NavItem = props => {
         const navLinkDarkThemeText = isDarkTheme ? 'header-dark-theme-text' : ''
 
         return (
-          <li className="nav-menu-item" onClick={onClickNavItem}>
+          <li className="nav-menu-item">
             <NavLink
               exact
               to={`/${pathText}`}
